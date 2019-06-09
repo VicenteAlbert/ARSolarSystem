@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		C1D8D6E822AD39880001FD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6E722AD39880001FD18 /* AppDelegate.swift */; };
-		C1D8D6EA22AD39880001FD18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6E922AD39880001FD18 /* ViewController.swift */; };
+		C1D8D6EA22AD39880001FD18 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6E922AD39880001FD18 /* MainViewController.swift */; };
 		C1D8D6ED22AD39880001FD18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D8D6EB22AD39880001FD18 /* Main.storyboard */; };
 		C1D8D6F022AD39880001FD18 /* ARSolarSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6EE22AD39880001FD18 /* ARSolarSystem.xcdatamodeld */; };
 		C1D8D6F222AD39890001FD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D8D6F122AD39890001FD18 /* Assets.xcassets */; };
 		C1D8D6F522AD39890001FD18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D8D6F322AD39890001FD18 /* LaunchScreen.storyboard */; };
+		C1D8D6FE22AD3C1A0001FD18 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6FD22AD3C1A0001FD18 /* Int+Extensions.swift */; };
+		C1D8D70122AD3C770001FD18 /* PlanetWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D70022AD3C770001FD18 /* PlanetWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C1D8D6E422AD39880001FD18 /* ARSolarSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARSolarSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D8D6E722AD39880001FD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1D8D6E922AD39880001FD18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1D8D6E922AD39880001FD18 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C1D8D6EC22AD39880001FD18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1D8D6EF22AD39880001FD18 /* ARSolarSystem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARSolarSystem.xcdatamodel; sourceTree = "<group>"; };
 		C1D8D6F122AD39890001FD18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1D8D6F422AD39890001FD18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1D8D6F622AD39890001FD18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1D8D6FD22AD3C1A0001FD18 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		C1D8D70022AD3C770001FD18 /* PlanetWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		C1D8D6E622AD39880001FD18 /* ARSolarSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C1D8D6FF22AD3C600001FD18 /* PlanetWrapper */,
+				C1D8D6FC22AD3C0B0001FD18 /* Extensions */,
 				C1D8D6E722AD39880001FD18 /* AppDelegate.swift */,
-				C1D8D6E922AD39880001FD18 /* ViewController.swift */,
+				C1D8D6E922AD39880001FD18 /* MainViewController.swift */,
 				C1D8D6EB22AD39880001FD18 /* Main.storyboard */,
 				C1D8D6F122AD39890001FD18 /* Assets.xcassets */,
 				C1D8D6F322AD39890001FD18 /* LaunchScreen.storyboard */,
@@ -65,6 +71,22 @@
 				C1D8D6EE22AD39880001FD18 /* ARSolarSystem.xcdatamodeld */,
 			);
 			path = ARSolarSystem;
+			sourceTree = "<group>";
+		};
+		C1D8D6FC22AD3C0B0001FD18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C1D8D6FD22AD3C1A0001FD18 /* Int+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C1D8D6FF22AD3C600001FD18 /* PlanetWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				C1D8D70022AD3C770001FD18 /* PlanetWrapper.swift */,
+			);
+			path = PlanetWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1D8D6EA22AD39880001FD18 /* ViewController.swift in Sources */,
+				C1D8D70122AD3C770001FD18 /* PlanetWrapper.swift in Sources */,
+				C1D8D6EA22AD39880001FD18 /* MainViewController.swift in Sources */,
+				C1D8D6FE22AD3C1A0001FD18 /* Int+Extensions.swift in Sources */,
 				C1D8D6E822AD39880001FD18 /* AppDelegate.swift in Sources */,
 				C1D8D6F022AD39880001FD18 /* ARSolarSystem.xcdatamodeld in Sources */,
 			);
@@ -289,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QBBK9GJJC;
 				INFOPLIST_FILE = ARSolarSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vicentiu.petreaca.ARSolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QBBK9GJJC;
 				INFOPLIST_FILE = ARSolarSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vicentiu.petreaca.ARSolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
