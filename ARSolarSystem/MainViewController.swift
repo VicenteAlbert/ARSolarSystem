@@ -11,15 +11,21 @@ import ARKit
 class MainViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
+    
     let configuration = ARWorldTrackingConfiguration()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
-        self.sceneView.session.run(configuration)
-        self.sceneView.autoenablesDefaultLighting = true
+//        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+        AVCaptureDevice.requestAccess(for: .video) {
+            if $0 {
+                self.sceneView.session.run(self.configuration)
+                self.sceneView.autoenablesDefaultLighting = true
+                self.addPlanets()
+            }
+        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    func addPlanets() {
         let sun = SCNNode(geometry: SCNSphere(radius: 0.35))
         let earthParent = SCNNode()
         let venusParent = SCNNode()
@@ -37,23 +43,23 @@ class MainViewController: UIViewController {
         
         
         let earthWrapper = PlanetWrapper(geometry: SCNSphere(radius: 0.2),
-                                  diffuse: #imageLiteral(resourceName: "Earth day"),
-                                  specular: #imageLiteral(resourceName: "Earth Specular"),
-                                  emission: #imageLiteral(resourceName: "Earth Emission"),
-                                  normal: #imageLiteral(resourceName: "Earth Normal"),
-                                  position: SCNVector3(1.2 ,0 , 0))
+                                         diffuse: #imageLiteral(resourceName: "Earth day"),
+                                         specular: #imageLiteral(resourceName: "Earth Specular"),
+                                         emission: #imageLiteral(resourceName: "Earth Emission"),
+                                         normal: #imageLiteral(resourceName: "Earth Normal"),
+                                         position: SCNVector3(1.2 ,0 , 0))
         let venusWrapper = PlanetWrapper(geometry: SCNSphere(radius: 0.1),
-                                  diffuse: #imageLiteral(resourceName: "Venus Surface"),
-                                  specular: nil,
-                                  emission: #imageLiteral(resourceName: "Venus Atmosphere"),
-                                  normal: nil,
-                                  position: SCNVector3(0.7, 0, 0))
+                                         diffuse: #imageLiteral(resourceName: "Venus Surface"),
+                                         specular: nil,
+                                         emission: #imageLiteral(resourceName: "Venus Atmosphere"),
+                                         normal: nil,
+                                         position: SCNVector3(0.7, 0, 0))
         let moonWrapper = PlanetWrapper(geometry: SCNSphere(radius: 0.05),
-                                 diffuse: #imageLiteral(resourceName: "moon Diffuse"),
-                                 specular: nil,
-                                 emission: nil,
-                                 normal: nil,
-                                 position: SCNVector3(0,0,-0.3))
+                                        diffuse: #imageLiteral(resourceName: "moon Diffuse"),
+                                        specular: nil,
+                                        emission: nil,
+                                        normal: nil,
+                                        position: SCNVector3(0,0,-0.3))
         
         let earthNode = earthWrapper.node
         let venusNode = venusWrapper.node
