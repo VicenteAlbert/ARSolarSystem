@@ -8,21 +8,37 @@
 
 import ARKit
 
-struct PlanetWrapper {
-    let geometry: SCNGeometry
-    let diffuse: UIImage
-    let specular: UIImage?
-    let emission: UIImage?
-    let normal: UIImage?
-    let position: SCNVector3
-    
-    var node: SCNNode {
-        let planet = SCNNode(geometry: geometry)
-        planet.geometry?.firstMaterial?.diffuse.contents = diffuse
-        planet.geometry?.firstMaterial?.specular.contents = specular
-        planet.geometry?.firstMaterial?.emission.contents = emission
-        planet.geometry?.firstMaterial?.normal.contents = normal
-        planet.position = position
-        return planet
+class PlanetWrapper: SCNNode {
+    private let underlyingModel: PlanetModel
+
+    var id: String {
+        return underlyingModel.id
+    }
+
+    init(geometry: SCNGeometry,
+         diffuse: UIImage,
+         specular: UIImage? = nil,
+         emission: UIImage? = nil,
+         normal: UIImage? = nil,
+         position: SCNVector3,
+         model: PlanetModel) {
+        self.underlyingModel = model
+        super.init()
+        self.geometry = geometry
+        self.position = position
+        self.geometry?.firstMaterial?.diffuse.contents = diffuse
+        self.geometry?.firstMaterial?.specular.contents = specular
+        self.geometry?.firstMaterial?.emission.contents = emission
+        self.geometry?.firstMaterial?.normal.contents = normal
+        self.name = model.name
+    }
+
+    override init() {
+        self.underlyingModel = PlanetModel(id: "", name: "")
+        super.init()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
