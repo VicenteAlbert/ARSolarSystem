@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
             let hits = sceneView.hitTest(location, options: nil)
             if hits.isEmpty == false,
                 let planet = hits.first?.node as? PlanetWrapper {
-                print(planet.id, planet.name)
+                performSegue(withIdentifier: "showDetails", sender: planet.id)
             }
         }
     }
@@ -72,8 +72,15 @@ class MainViewController: UIViewController {
             }
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = sender as? String else { return }
+        let destinationNav = segue.destination as! UINavigationController
+        let detailsVC = destinationNav.viewControllers.first as! DetailsViewController
+        detailsVC.planetId = id
+    }
     
-    func addPlanets() {
+    private func addPlanets() {
         let zPos: Double = -5
         let yPos: Double = -1
         let sun = PlanetWrapper(geometry: SCNSphere(radius: 0.69), diffuse: #imageLiteral(resourceName: "Sun diffuse"), position: SCNVector3(0, yPos, zPos), model: planets[.sun])

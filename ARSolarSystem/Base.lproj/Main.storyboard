@@ -37,6 +37,7 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="485-Hb-ZWI" id="1ue-tM-ZOI"/>
+                        <segue destination="XMG-O3-C5T" kind="show" identifier="showDetails" id="eEs-ma-RlX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -47,6 +48,86 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Planeta-->
+        <scene sceneID="Cwn-TQ-O1Y">
+            <objects>
+                <viewController id="tDD-AG-HPi" customClass="DetailsViewController" customModule="ARSolarSystem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQf-gj-0t6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-AD-Tzv">
+                                <rect key="frame" x="30" y="84" width="315" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3CX-A9-lBS">
+                                <rect key="frame" x="6" y="125.5" width="363" height="465.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzm-zp-xgm">
+                                <rect key="frame" x="20" y="611" width="335" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Mai multe detalii"/>
+                                <connections>
+                                    <action selector="moreInfoTapped" destination="tDD-AG-HPi" eventType="touchUpInside" id="SQ1-LD-cea"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3CX-A9-lBS" firstAttribute="leading" secondItem="p0a-3y-hbK" secondAttribute="leading" constant="6" id="0Tl-rZ-Fb2"/>
+                            <constraint firstItem="Qzm-zp-xgm" firstAttribute="top" secondItem="3CX-A9-lBS" secondAttribute="bottom" constant="20" id="1j2-KL-jIm"/>
+                            <constraint firstItem="p0a-3y-hbK" firstAttribute="trailing" secondItem="Abr-AD-Tzv" secondAttribute="trailing" constant="30" id="BpE-b2-yOo"/>
+                            <constraint firstItem="Abr-AD-Tzv" firstAttribute="top" secondItem="p0a-3y-hbK" secondAttribute="top" constant="20" id="E5o-pW-Ju1"/>
+                            <constraint firstItem="p0a-3y-hbK" firstAttribute="trailing" secondItem="Qzm-zp-xgm" secondAttribute="trailing" constant="20" id="GCb-9Z-BD4"/>
+                            <constraint firstItem="p0a-3y-hbK" firstAttribute="bottom" secondItem="Qzm-zp-xgm" secondAttribute="bottom" constant="20" id="Iyb-Gb-T4u"/>
+                            <constraint firstItem="Abr-AD-Tzv" firstAttribute="leading" secondItem="p0a-3y-hbK" secondAttribute="leading" constant="30" id="QkP-Jq-GOK"/>
+                            <constraint firstItem="Abr-AD-Tzv" firstAttribute="centerX" secondItem="FQf-gj-0t6" secondAttribute="centerX" id="UvK-AD-EJ3"/>
+                            <constraint firstItem="3CX-A9-lBS" firstAttribute="top" secondItem="Abr-AD-Tzv" secondAttribute="bottom" constant="10" id="e6y-Oa-vdf"/>
+                            <constraint firstItem="Qzm-zp-xgm" firstAttribute="leading" secondItem="p0a-3y-hbK" secondAttribute="leading" constant="20" id="frl-Zm-Mp6"/>
+                            <constraint firstItem="p0a-3y-hbK" firstAttribute="trailing" secondItem="3CX-A9-lBS" secondAttribute="trailing" constant="6" id="seL-JB-WKl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p0a-3y-hbK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Planeta" id="dnV-5L-5Se">
+                        <barButtonItem key="leftBarButtonItem" title="Inchide" id="jUb-7x-Xwt">
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="tDD-AG-HPi" id="Nji-Pf-dUm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailsLabel" destination="Abr-AD-Tzv" id="sts-Gd-KDC"/>
+                        <outlet property="detailsTextView" destination="3CX-A9-lBS" id="1Xv-8a-6Ju"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzR-g6-LTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2140" y="118.29085457271366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DzG-HE-bQf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XMG-O3-C5T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yyq-fG-TPe">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tDD-AG-HPi" kind="relationship" relationship="rootViewController" id="P6u-4T-8Fv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoI-yh-8ah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200.8" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>
