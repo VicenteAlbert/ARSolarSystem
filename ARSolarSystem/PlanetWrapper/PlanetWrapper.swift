@@ -33,11 +33,6 @@ class PlanetWrapper: SCNNode {
         self.name = model.name
     }
 
-    override init() {
-        self.underlyingModel = PlanetModel(id: "", name: "")
-        super.init()
-    }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

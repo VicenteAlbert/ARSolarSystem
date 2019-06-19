@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C18A962422B8EEC50014F092 /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A962322B8EEC50014F092 /* PlanetModel.swift */; };
-		C18A962622B8EF990014F092 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A962522B8EF990014F092 /* Constants.swift */; };
 		C18A962822B928030014F092 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A962722B928030014F092 /* Array+Extensions.swift */; };
+		C18A962A22B93A880014F092 /* planete.json in Resources */ = {isa = PBXBuildFile; fileRef = C18A962922B93A880014F092 /* planete.json */; };
+		C18A962E22B93D460014F092 /* Planet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A962C22B93D460014F092 /* Planet+CoreDataClass.swift */; };
+		C18A962F22B93D460014F092 /* Planet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A962D22B93D460014F092 /* Planet+CoreDataProperties.swift */; };
 		C1D8D6E822AD39880001FD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6E722AD39880001FD18 /* AppDelegate.swift */; };
 		C1D8D6EA22AD39880001FD18 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D6E922AD39880001FD18 /* MainViewController.swift */; };
 		C1D8D6ED22AD39880001FD18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D8D6EB22AD39880001FD18 /* Main.storyboard */; };
@@ -22,8 +24,10 @@
 
 /* Begin PBXFileReference section */
 		C18A962322B8EEC50014F092 /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
-		C18A962522B8EF990014F092 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C18A962722B928030014F092 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		C18A962922B93A880014F092 /* planete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = planete.json; sourceTree = "<group>"; };
+		C18A962C22B93D460014F092 /* Planet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Planet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C18A962D22B93D460014F092 /* Planet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Planet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C1D8D6E422AD39880001FD18 /* ARSolarSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARSolarSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D8D6E722AD39880001FD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D8D6E922AD39880001FD18 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C18A962B22B93D330014F092 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C18A962C22B93D460014F092 /* Planet+CoreDataClass.swift */,
+				C18A962D22B93D460014F092 /* Planet+CoreDataProperties.swift */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		C1D8D6DB22AD39880001FD18 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +79,7 @@
 		C1D8D6E622AD39880001FD18 /* ARSolarSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C18A962B22B93D330014F092 /* CoreDataModel */,
 				C1D8D6FF22AD3C600001FD18 /* PlanetWrapper */,
 				C1D8D6FC22AD3C0B0001FD18 /* Extensions */,
 				C1D8D6E722AD39880001FD18 /* AppDelegate.swift */,
@@ -75,7 +89,7 @@
 				C1D8D6F322AD39890001FD18 /* LaunchScreen.storyboard */,
 				C1D8D6F622AD39890001FD18 /* Info.plist */,
 				C1D8D6EE22AD39880001FD18 /* ARSolarSystem.xcdatamodeld */,
-				C18A962522B8EF990014F092 /* Constants.swift */,
+				C18A962922B93A880014F092 /* planete.json */,
 			);
 			path = ARSolarSystem;
 			sourceTree = "<group>";
@@ -157,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D8D6F522AD39890001FD18 /* LaunchScreen.storyboard in Resources */,
+				C18A962A22B93A880014F092 /* planete.json in Resources */,
 				C1D8D6F222AD39890001FD18 /* Assets.xcassets in Resources */,
 				C1D8D6ED22AD39880001FD18 /* Main.storyboard in Resources */,
 			);
@@ -171,10 +186,11 @@
 			files = (
 				C1D8D70122AD3C770001FD18 /* PlanetWrapper.swift in Sources */,
 				C1D8D6EA22AD39880001FD18 /* MainViewController.swift in Sources */,
+				C18A962E22B93D460014F092 /* Planet+CoreDataClass.swift in Sources */,
 				C1D8D6FE22AD3C1A0001FD18 /* Int+Extensions.swift in Sources */,
 				C18A962822B928030014F092 /* Array+Extensions.swift in Sources */,
 				C1D8D6E822AD39880001FD18 /* AppDelegate.swift in Sources */,
-				C18A962622B8EF990014F092 /* Constants.swift in Sources */,
+				C18A962F22B93D460014F092 /* Planet+CoreDataProperties.swift in Sources */,
 				C1D8D6F022AD39880001FD18 /* ARSolarSystem.xcdatamodeld in Sources */,
 				C18A962422B8EEC50014F092 /* PlanetModel.swift in Sources */,
 			);

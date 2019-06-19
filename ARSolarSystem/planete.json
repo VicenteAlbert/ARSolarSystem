@@ -1,0 +1,73 @@
+[
+    {
+        "id": "AB031C1F-76C4-4404-8844-FD066A2F69FC",
+        "name": "Mercur",
+        "details": "Mercur este planeta cea mai apropiată de Soare, înconjurându-l o dată la fiecare 88 zile pământene. Luminozitatea sa variază între -2,0 și 5,5 în magnitudine aparentă, dar nu este ușor de văzut fiindcă cea mai mare separare unghiulară (cea mai mare elongație) față de Soare este de doar 28,3°, însemnând că se poate vedea doar imediat după apusul Soarelui. În perioada 1974 - 1975, Mercur a fost studiată cu ajutorul sondei Mariner 10, care a cartografiat doar 40 - 45 % din suprafața planetei. Începând din 2011, sonda spațială MESSENGER orbitează în jurul planetei pentru a studia compoziția chimică, geologia și câmpul magnetic.",
+        "url": "https://ro.wikipedia.org/wiki/Mercur_(planet%C4%83)",
+        "order": 0
+    },
+    {
+        "id": "8B21352E-D8A3-4344-8436-9EB80A8E54EC",
+        "name": "Venus",
+        "details": "Venus este a doua planetă ca distanță față de Soare în sistemul nostru solar. Situată la 108 milioane km de Soare, Venus își parcurge orbita în 224,7 de zile.[3] Rotația în jurul propriei sale axe este foarte lentă, durează 243 de zile și are loc de la vest la est, în sens invers față de rotația celorlalte planete. Cu un diametru de 12.100 km, Venus este, ca poziție, a doua planetă (pornind de la Soare) din sistemul solar, orbita sa fiind cuprinsă între cea a planetelor Mercur și Pământ. Venus este cu foarte puțin mai mică decât Pământul, dar atmosfera sa este foarte diferită: în principal, aceasta este compusă din 96 % gaz carbonic și 3,5 % azot. Ea este înconjurată de un văl gros de nori repartizați în trei straturi situate la o altitudine între 50 și 70 km.",
+        "url": "https://ro.wikipedia.org/wiki/Venus",
+        "order": 1
+    },
+    {
+        "id": "6629C532-599F-403C-BAF4-8CA55621A5B9",
+        "name": "Pământ",
+        "details": "Pământ (numită și Terra sau „Planeta albastră”) este a treia planetă de la Soare și cea mai mare dintre planetele telurice ale Sistemului Solar, atât pentru masă, cât și pentru diametru. Este singurul corp ceresc despre care se știe că adăpostește viață. Simbolul astronomic al Pământului este ♁ sau ⊕.[28] Conform datărilor radiometrice și a altor surse de dovezi, Pământul s-a format în urmă cu peste 4,5 miliarde de ani. Gravitația Pământului interacționează cu alte obiecte din spațiu, în special cu Soarele și Luna, singurul satelit natural al Pământului. Terra se învârte în jurul Soarelui în 365,26 de zile, perioadă cunoscută drept un an. În acest timp, Pământul se rotește în jurul axei sale de aproximativ 366,26 ori.",
+        "url": "https://ro.wikipedia.org/wiki/P%C4%83m%C3%A2nt",
+        "order": 2
+    },
+    {
+        "id": "CB6DFACE-033E-46AD-9ED2-9ED31A055327",
+        "name": "Marte",
+        "details": "Marte este o planetă telurică (de tip terestru) cu o atmosferă subțire; printre caracteristicile suprafeței se numără și craterele de impact ce amintesc de Lună, dar și vulcani, văi, deșerturi și calote glaciare polare ce amintesc de Pământ. Pe Marte se găsește cel mai înalt munte cunoscut al Sistemului Solar, Olympus Mons (21.230 m altitudine), precum și cel mai mare canion, numit Valles Marineris. În anul 2008, în trei articole publicate în revista Nature s-au adus dovezi despre un crater de impact uriaș, lung de 10.600 km și lat de 8.500 de km, care este de apoximativ de patru ori mai mare decât craterul Bazinul Polul-Sud-Aitken de pe Lună.",
+        "url": "https://ro.wikipedia.org/wiki/Marte_(planet%C4%83)",
+        "order": 3
+    },
+    {
+        "id": "9553B986-2051-4EC3-B1C6-CBAB91C8A3DA",
+        "name": "Jupiter",
+        "details": "Jupiter este al patrulea obiect de pe cer ca strălucire (după Soare, Lună și Venus; și câteodată Marte). A fost cunoscut din timpuri preistorice. Descoperirea de către Galileo Galilei și Simon Marius⁠, în 1610, ai celor patru mari sateliți ai lui Jupiter: Io, Europa, Ganymede și Callisto (cunoscute ca sateliții Galileeni) a fost prima descoperire a unui centru de mișcare aparent necentrat pe Pământ. A fost un punct major în favoarea teoriei heliocentrice de mișcare a planetelor a lui Nicolaus Copernic; susținerea de către Galileo a teoriei coperniciene i-a adus probleme cu Inchiziția.",
+        "url": "https://ro.wikipedia.org/wiki/Jupiter",
+        "order": 4
+    },
+    {
+        "id": "DEEE3A6D-9930-4221-9BB5-71CACEC12015",
+        "name": "Saturn",
+        "details": "Planeta este compusă din hidrogen și proporții mici de heliu și alte elemente. Structura internă a planetei constă într-un miez de piatră și gheață, înconjurat de un strat gros de hidrogen metalic și un strat gazos exterior. Atmosfera este blândă, deși multe caracteristici intense pot apărea. Vânturile de pe Saturn pot atinge viteze de 1,800 km/h, mult mai rapide decât cele de pe Jupiter. Are un câmp magnetic a cărui putere este un intermediar între cea a Pământului și câmpul puternic al lui Jupiter.",
+        "url": "https://ro.wikipedia.org/wiki/Saturn",
+        "order": 5
+    },
+    {
+        "id": "B8388C71-FF38-48A7-A80F-2BB1510C53E2",
+        "name": "Uranus",
+        "details": "Plasat pe o orbită de 19 ori mai îndepărtată de Soare decât cea a Pământului, Uranus, ca și Neptun, primește foarte puțină căldură. Cu un diametru de 52.000 km, Uranus este de 2 ori mai mic decât Saturn, dar de 5 ori mai mare decât Terra (Pământul). Este înconjurat de inele întunecate și are 27 sateliți.",
+        "url": "https://ro.wikipedia.org/wiki/Uranus",
+        "order": 6
+    },
+    {
+        "id": "F21D3B47-1DDE-4630-830D-B7D8D34CFCE8",
+        "name": "Neptun",
+        "details": "Neptun este a opta planeta de la Soare din sistemul solar. Numită după zeul roman al mării, este a patra planetă după diametru și a treia după masă. Neptun are o masă de 17 ori mai mare decât cea a Pământului și puțin mai mare decât masa lui Uranus, care este de 15 ori mai greu decât Pământul, dar nu la fel de dens. Neptun orbitează în jurul Soarelui la o distanță de 30,1 unități astronomice, ceea ce înseamnă că orbita sa este de aproximativ 30 de ori mai mare decât orbita Pământului. Simbolul astronomic al lui Neptun este ♆, o variantă modificată a tridentului zeului Neptun.",
+        "url": "https://ro.wikipedia.org/wiki/Neptun",
+        "order": 7
+    },
+    {
+        "id": "F21D3B47-1DDE-4630-A3F8-B7D8D34CFCE8",
+        "name": "Soare",
+        "details": "Soarele este steaua aflată în centrul Sistemului nostru Solar. Masa totală a Pământului, a tuturor celorlalte planete, asteroizi, meteoroizi, comete precum și a prafului interplanetar care orbitează în jurul Soarelui, reprezintă abia 0,14% din masa întregului Sistem Solar, în timp ce masa Soarelui reprezintă 99,86%. Energia provenită de la Soare (sub forma luminii, căldurii ș.a.) face posibilă întreaga viață de pe Pământ, de exemplu prin fotosinteză, iar prin intermediul căldurii și clima favorabilă.",
+        "url": "https://ro.wikipedia.org/wiki/Soare",
+        "order": 8
+    }
+    ,
+    {
+        "id": "B8388C71-1DDE-A80F-A3F8-B7D8D34CFCE8",
+        "name": "Luna",
+        "details": "Luna, este un corp astronomic care orbitează planeta Pământ, fiind singurul său satelit natural permanent⁠. Este al cincilea cel mai mare⁠(d) satelit natural din Sistemul Solar, și cel mai mare dintre sateliți planetari relativ la dimensiunea planetei pe care o orbitează (obiectul său primar⁠). După satelitul lui Jupiter, Io, Luna este al doilea cel mai dens satelit dintre cei ale căror densități sunt cunoscute.",
+        "url": "https://ro.wikipedia.org/wiki/Luna",
+        "order": 9
+    }
+]

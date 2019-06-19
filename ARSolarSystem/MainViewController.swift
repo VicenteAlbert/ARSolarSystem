@@ -8,12 +8,37 @@
 
 import UIKit
 import ARKit
+import CoreData
 
 enum PlanetIndex: Int, CaseIterable {
-    case mercury = 0, venus, earth, moon, mars, jupiter, saturn, uranus, neptune
+    case mercury = 0, venus, earth, mars, jupiter, saturn, uranus, neptune, sun, moon
+    init(_ name: String) {
+        switch name {
+        case "Mercur":
+            self = .mercury
+        case "Venus":
+            self = .venus
+        case "Pământ":
+            self = .earth
+        case "Marte":
+            self = .mars
+        case "Jupiter":
+            self = .jupiter
+        case "Saturn":
+            self = .saturn
+        case "Uranus":
+            self = .uranus
+        case "Neptun":
+            self = .neptune
+        default:
+            self = .moon
+        }
+    }
 }
 
 class MainViewController: UIViewController {
+    private var planets = [PlanetModel]()
+
     let configuration = ARWorldTrackingConfiguration()
 
     @IBOutlet weak var sceneView: ARSCNView!
@@ -31,8 +56,16 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         AVCaptureDevice.requestAccess(for: .video) {
             if $0 {
+                do {
+                    if let cdPlanets = try context.fetch(Planet.fetchRequest()) as? [Planet] {
+                        self.planets = cdPlanets.map(PlanetModel.init).sorted { $0.order < $1.order }
+                    }
+                } catch {
+                    print("Failed")
+                }
                 self.sceneView.session.run(self.configuration)
                 self.sceneView.autoenablesDefaultLighting = true
                 self.addPlanets()
@@ -43,23 +76,25 @@ class MainViewController: UIViewController {
     func addPlanets() {
         let zPos: Double = -5
         let yPos: Double = -1
-        let sun = PlanetWrapper(geometry: SCNSphere(radius: 0.69), diffuse: #imageLiteral(resourceName: "Sun diffuse"), position: SCNVector3(0, yPos, zPos), model: models[0])
+        let sun = PlanetWrapper(geometry: SCNSphere(radius: 0.69), diffuse: #imageLiteral(resourceName: "Sun diffuse"), position: SCNVector3(0, yPos, zPos), model: planets[.sun])
+        sun.runAction(rotation(time: 3))
         sceneView.scene.rootNode.addChildNode(sun)
         animateIn(node: sun, duration: 0.5)
 
         let planetDict = PlanetIndex.allCases.reduce(into: [PlanetIndex: (parent: SCNNode, wrapper: PlanetWrapper)]()) {
+            let model = planets[$1]
             switch $1 {
             case .mercury:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.24),
                                                   diffuse: #imageLiteral(resourceName: "Mercury Surface"),
                                                   position: SCNVector3(1.25, yPos, zPos),
-                                                  model: PlanetModel(id: "0", name: "Mercury")))
+                                                  model: model))
             case .venus:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.6),
                                                    diffuse: #imageLiteral(resourceName: "Venus Surface"),
                                                    emission: #imageLiteral(resourceName: "Venus Atmosphere"),
                                                    position: SCNVector3(2.5, yPos, zPos),
-                                                   model: models[1]))
+                                                   model: model))
             case .earth:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.63),
                                                    diffuse: #imageLiteral(resourceName: "Earth day"),
@@ -67,37 +102,38 @@ class MainViewController: UIViewController {
                                                    emission: #imageLiteral(resourceName: "Earth Emission"),
                                                    normal: #imageLiteral(resourceName: "Earth Normal"),
                                                    position: SCNVector3(4.75, yPos, zPos),
-                                                   model: models[2]))
+                                                   model: model))
             case .moon:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.25),
                                                    diffuse: #imageLiteral(resourceName: "moon Diffuse"),
                                                    position: SCNVector3(0, 0.25, -1),
-                                                   model: models[3]))
+                                                   model: model))
             case .mars:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.33),
                                                    diffuse: #imageLiteral(resourceName: "Mars Surface"),
                                                    position: SCNVector3(7.2, yPos, zPos),
-                                                   model: PlanetModel(id: "0", name: "Mars")))
+                                                   model: model))
             case .jupiter:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.69),
                                                    diffuse: #imageLiteral(resourceName: "Jupiter Surface"),
                                                    position: SCNVector3(8.6, yPos, zPos),
-                                                   model: PlanetModel(id: "3", name: "Jupiter")))
+                                                   model: model))
             case .saturn:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.6),
                                                    diffuse: #imageLiteral(resourceName: "Saturn Surface"),
                                                    position: SCNVector3(10, yPos, zPos),
-                                                   model: PlanetModel(id: "63", name: "Saturn")))
+                                                   model: model))
             case .uranus:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.25),
                                                    diffuse: #imageLiteral(resourceName: "Uranus Surface"),
                                                    position: SCNVector3(10.5, yPos, zPos),
-                                                   model: PlanetModel(id: "323", name: "Uranus")))
+                                                   model: model))
             case .neptune:
                 $0[$1] = (SCNNode(), PlanetWrapper(geometry: SCNSphere(radius: 0.24),
                                                    diffuse: #imageLiteral(resourceName: "Neptune Surface"),
                                                    position: SCNVector3(11, yPos, zPos),
-                                                   model: PlanetModel(id: "36", name: "Neptune")))
+                                                   model: model))
+            case .sun: break
             }
         }
 
@@ -117,13 +153,17 @@ class MainViewController: UIViewController {
         createPlanet(.uranus, from: planetDict, selfRotation: rotation(time: 8), axisRotation: rotation(time: 17))
         createPlanet(.neptune, from: planetDict, selfRotation: rotation(time: 8), axisRotation: rotation(time: 19))
 
-        planetDict.forEach { animateIn(node: $0.value.wrapper) }
-
-        let sunRotation = rotation(time: 3)
-        sun.runAction(sunRotation)
-
+        // Earth specific due to the Moon
         planetDict[.earth]?.parent.addChildNode(planetDict[.moon]!.parent)
         planetDict[.earth]?.wrapper.addChildNode(planetDict[.moon]!.wrapper)
+
+        // Saturn specific
+        let ring = SCNTorus(ringRadius: 0.7, pipeRadius: 0.1)
+        ring.materials.first?.diffuse.contents = #imageLiteral(resourceName: "Saturn Ring Surface")
+        let torusNode = SCNNode(geometry: ring)
+        planetDict[.saturn]?.wrapper.addChildNode(torusNode)
+
+        planetDict.forEach { animateIn(node: $0.value.wrapper) }
     }
 
     private func createPlanet(

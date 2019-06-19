@@ -8,7 +8,7 @@
 
 import SceneKit
 
-extension Array where Element == SCNNode {
+extension Array where Element == PlanetModel {
     subscript(_ idx: PlanetIndex) -> Element {
         return self[idx.rawValue]
     }
