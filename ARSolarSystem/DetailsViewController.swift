@@ -21,14 +21,13 @@ class DetailsViewController: UIViewController {
         }
     }
 
-
     @IBOutlet weak var detailsTextView: UITextView!
 
     @IBAction func moreInfoTapped() {
         let urlObj = URL(string: url)!
         UIApplication.shared.open(urlObj, options: [:], completionHandler: nil)
     }
-    
+
     @IBAction func closeButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -37,7 +36,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDel = (UIApplication.shared.delegate as! AppDelegate)
-        let fetchRequest = NSFetchRequest<Planet>(entityName: "Planet")
+        let fetchRequest: NSFetchRequest<Planet> = Planet.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id = %@", planetId)
         do {
             if let planet = try appDel.persistentContainer.viewContext.fetch(fetchRequest).first {

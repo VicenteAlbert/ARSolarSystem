@@ -12,28 +12,6 @@ import CoreData
 
 enum PlanetIndex: Int, CaseIterable {
     case mercury = 0, venus, earth, mars, jupiter, saturn, uranus, neptune, sun, moon
-    init(_ name: String) {
-        switch name {
-        case "Mercur":
-            self = .mercury
-        case "Venus":
-            self = .venus
-        case "Pământ":
-            self = .earth
-        case "Marte":
-            self = .mars
-        case "Jupiter":
-            self = .jupiter
-        case "Saturn":
-            self = .saturn
-        case "Uranus":
-            self = .uranus
-        case "Neptun":
-            self = .neptune
-        default:
-            self = .moon
-        }
-    }
 }
 
 class MainViewController: UIViewController {
