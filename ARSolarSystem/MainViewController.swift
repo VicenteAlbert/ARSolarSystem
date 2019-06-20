@@ -34,9 +34,10 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        AVCaptureDevice.requestAccess(for: .video) {
-            if $0 {
+        let context = (UIApplication.shared.delegate as! AppDelegate)
+            .persistentContainer.viewContext
+        AVCaptureDevice.requestAccess(for: .video) { accepted in
+            if accepted {
                 do {
                     if let cdPlanets = try context.fetch(Planet.fetchRequest()) as? [Planet] {
                         self.planets = cdPlanets.map(PlanetModel.init).sorted { $0.order < $1.order }
@@ -61,7 +62,10 @@ class MainViewController: UIViewController {
     private func addPlanets() {
         let zPos: Double = -5
         let yPos: Double = -1
-        let sun = PlanetWrapper(geometry: SCNSphere(radius: 0.69), diffuse: #imageLiteral(resourceName: "Sun diffuse"), position: SCNVector3(0, yPos, zPos), model: planets[.sun])
+        let sun = PlanetWrapper(geometry: SCNSphere(radius: 0.69),
+                                diffuse: #imageLiteral(resourceName: "Sun diffuse"),
+                                position: SCNVector3(0, yPos, zPos),
+                                model: planets[.sun])
         sun.runAction(rotation(time: 3))
         sceneView.scene.rootNode.addChildNode(sun)
         animateIn(node: sun, duration: 0.5)
